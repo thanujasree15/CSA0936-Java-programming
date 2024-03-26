@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class BonusCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask the user for salary and years of service
+        System.out.print("Enter your salary: ");
+        double salary = scanner.nextDouble();
+
+        System.out.print("Enter your years of service: ");
+        int yearsOfService = scanner.nextInt();
+
+        // Calculate bonus amount
+        double bonus = 0;
+        if (yearsOfService > 5) {
+            bonus = 0.05 * salary; // 5% of salary
+        }
+
+        // Print the net bonus amount
+        System.out.println("Net bonus amount: $" + bonus);
+    }
+}
