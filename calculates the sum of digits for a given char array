@@ -1,0 +1,20 @@
+public class DigitSumCalculator {
+    public static long calculateDigitSum(char[] digits) {
+        long sum = 0;
+
+        for (char digit : digits) {
+            if (Character.isDigit(digit)) {
+                int digitValue = Character.getNumericValue(digit);
+                sum += digitValue;
+            }
+        }
+
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        char[] inputDigits = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+        long digitSum = calculateDigitSum(inputDigits);
+        System.out.println("Digit sum: " + digitSum);
+    }
+}
