@@ -1,0 +1,37 @@
+public class CompositeNumberCounter {
+
+    public static void main(String[] args) {
+        // Sample array of elements
+        int[] elements = {4, 6, 7, 8, 9, 10};
+
+        // Count composite numbers
+        int compositeCount = countCompositeNumbers(elements);
+
+        // Display result
+        System.out.println("Number of composite numbers: " + compositeCount);
+    }
+
+    // Method to check if a number is composite
+    public static boolean isComposite(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Method to count composite numbers in an array
+    public static int countCompositeNumbers(int[] elements) {
+        int count = 0;
+        for (int num : elements) {
+            if (isComposite(num)) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
